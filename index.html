@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/29601d2dce.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: linear-gradient(#ed7b84, #F5DBCB);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+
+        }
+
+        .container {
+            position: relative;
+            height: 50px;
+
+        }
+
+
+        .button,
+        .search {
+            outline: none;
+        }
+
+        .search {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border: 0;
+            transition: width 2s ease;
+            border-radius: 4px;
+
+        }
+
+        .button {
+            position: absolute;
+            left: 0;
+            height: 40px;
+            width: 40px;
+            transition: transform 2s ease;
+        }
+
+        .search.active {
+            width: 200px;
+            border: 1px solid;
+
+
+        }
+
+        .button.active {
+            transform: translateX(200px)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" placeholder="Search..." class="search">
+        <button class="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+
+</body>
+<script>
+    let button = document.querySelector("button");
+    let input = document.querySelector("input");
+    button.addEventListener("click", () => {
+        button.classList.toggle("active");
+        input.classList.toggle("active")
+    })
+</script>
+
+</html>
